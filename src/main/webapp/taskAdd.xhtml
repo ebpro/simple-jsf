@@ -6,21 +6,25 @@
         template="/template/commonLayout.xhtml">
     <ui:define name="title">Add a task</ui:define>
     <ui:define name="content">
-    <h:messages/>
-    <h:form>
+
+    <h:form id="form">
+        <p:messages id="messages" showDetail="true" closable="true">
+            <p:autoUpdate/>
+        </p:messages>
         <div class="card ui-fluid">
             <div class="field">
-                <p:outputLabel for="description" value="Title"/>
-                <p:inputText id="description" value="#{taskView.title}" required="true"/>
+                <p:outputLabel for="title" value="Title"/>
+                <p:inputText id="title" value="#{taskView.title}"
+                             required="true"
+                             requiredMessage="Value is required"/>
             </div>
 
             <div class="field">
                 <p:outputLabel for="importance" value="Importance"/>
                 <p:spinner id="importance" value="#{taskView.importance}"/>
             </div>
-            <div class="field">
-              <p:button ajax="false" value="Add" outcome="#{taskView.add()}"/>
-            </div>
+
+            <p:commandButton value="Add" action="#{taskView.add()}"/>
         </div>
     </h:form>
     </ui:define>

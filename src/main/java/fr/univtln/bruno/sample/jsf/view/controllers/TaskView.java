@@ -17,6 +17,7 @@ import java.util.List;
 @Setter
 public class TaskView implements Serializable {
     private String title;
+
     private int importance;
 
     @Inject
