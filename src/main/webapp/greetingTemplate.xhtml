@@ -1,0 +1,15 @@
+    <ui:composition
+            xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:h="http://xmlns.jcp.org/jsf/html"
+            xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+            template="/template/commonLayout.xhtml">
+        <ui:define name="title">Jakarta EE 10 - Template</ui:define>
+        <ui:define name="content">
+            <h:form>
+                Name <h:inputText value="#{helloBean.name}" />
+                <h:commandButton value="Greet" actionListener="#{helloBean.doGreeting()}" /> <br/>
+
+                <h:outputText value="#{helloBean.greeting}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
